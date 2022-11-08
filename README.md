@@ -63,7 +63,7 @@ Nesta formação irá aprender conceitos do PHP moderno, como utilizar o PHP com
    
    <a href="https://www.php.net" target="_blank"> <img src="https://www.onespan.com//sites/default/files/blog/images/logo-php-adbac78231.png" alt="php" width="120" height="100" /> </a> 
    
-   <a href="https://www.laravel.com/" target="_blank"> <img src="https://e7.pngegg.com/pngimages/764/304/png-clipart-laravel-black-logo-tech-companies-thumbnail.png" width="200" height="100" /> </a> 
+   <a href="https://www.laravel.com/" target="_blank"> <img src="https://envision.com.np/wp-content/uploads/2018/01/laravel-logo.png" width="200" height="100" /> </a> 
 
    <a href="https://www.docker.com/" target="_blank"> <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" width="120" height="100" /> </a> 
 </div>
