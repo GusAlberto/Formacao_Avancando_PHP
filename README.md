@@ -2,7 +2,7 @@
 Nesta formação irá aprender conceitos do PHP moderno, como utilizar o PHP com banco de dados e como utilizar o PHP para web, criando serviços MVC e REST com os frameworks mais utilizados do mercado, tudo isso com as boas práticas necessárias para um bom desenvolvimento.
 
 <p align="center">
-   <img src="IMAGEM LARAVEL" width="1024" height="400">
+   <img src="https://github.com/GusAlberto/Formacao_Avancando_PHP/blob/main/img/laravel.jpg?raw=true" width="1024" height="400">
 </p>
 
 <p align="center">
@@ -63,7 +63,7 @@ Nesta formação irá aprender conceitos do PHP moderno, como utilizar o PHP com
    
    <a href="https://www.php.net" target="_blank"> <img src="https://www.onespan.com//sites/default/files/blog/images/logo-php-adbac78231.png" alt="php" width="120" height="100" /> </a> 
    
-   <a href="https://www.laravel.com/" target="_blank"> <img src="LARAVEL" width="120" height="100" /> </a> 
+   <a href="https://www.laravel.com/" target="_blank"> <img src="https://envision.com.np/wp-content/uploads/2018/01/laravel-logo.png" width="200" height="100" /> </a> 
 
    <a href="https://www.docker.com/" target="_blank"> <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" width="120" height="100" /> </a> 
 </div>
