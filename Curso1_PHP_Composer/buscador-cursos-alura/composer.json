@@ -3,11 +3,6 @@
     "description": "Projeto que busca cursos no site da Alura",
     "type": "library",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Alura\\BuscadorCursos\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Gustavo Alberto",
@@ -19,22 +14,34 @@
         "symfony/dom-crawler": "^4.2",
         "symfony/css-selector": "^6.1"
     },
+    "autoload": {
+        "files": [
+            "functions.php"
+        ],
+        "psr-4": {
+            "Alura\\BuscadorDeCursos\\": "src/"
+        }
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.0",
-        "squizlabs/php_codesniffer": "^3.7",
+        "squizlabs/php_codesniffer": "^3.4",
         "phan/phan": "^5.4"
     },
     "scripts": {
         "test": "phpunit tests\\TestBuscadorDeCursos.php",
-        "cs": "phpcs --strandard=PSR12 src/",
-        "phan": "phan --alow-polyfill-parser",
+        "cs": "phpcs --standard=PSR12 src/",
+        "phan": "phan --allow-polyfill-parser",
         "check": [
             "@phan",
             "@cs",
             "@test"
+        ],
+        "post-update-cmd": [
+            "@test"
         ]
     },
     "scripts-descriptions": {
-        "check": "Roda as verificações do código. PHAN, PHPCS e PHPUnit"
-    }
+        "check": "Roda as verificações do código. PHAN, PHPCS e PHPUNIT"
+    },
+    "bin": ["buscar-cursos.php"]
 }
