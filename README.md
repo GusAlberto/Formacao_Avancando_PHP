@@ -1,8 +1,16 @@
 # Formacao_Avancando_PHP
+
 Nesta formação irá aprender conceitos do PHP moderno, como utilizar o PHP com banco de dados e como utilizar o PHP para web, criando serviços MVC e REST com os frameworks mais utilizados do mercado, tudo isso com as boas práticas necessárias para um bom desenvolvimento.
 
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Formação Avançando em PHP**
+| :label: Tecnologias | PHP, Laravel, Composer, Doctrine
+| :rocket: URL         | https://url-deploy.com.br
+| :fire: Desafio     | https://url-do-desafio.com.br
+
 <p align="center">
-   <img src="https://github.com/GusAlberto/Formacao_Avancando_PHP/blob/main/img/laravel.jpg?raw=true" width="1024" height="400">
+   <img src="https://github.com/GusAlberto/Formacao_Avancando_PHP/blob/main/img/laravel.jpg?raw=true#vitrinedev" width="1024" height="400">
 </p>
 
 <p align="center">
