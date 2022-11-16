@@ -18,24 +18,32 @@ class Persistencia implements InterfaceControladorRequisicao
             ->getEntityManager();
     }
 
-    public function  processaRequisicao(): void
-    {   
+    public function processaRequisicao(): void
+    {
         $descricao = filter_input(
             INPUT_POST,
             'descricao',
-            htmlspecialchars('UTF-8')
+            FILTER_SANITIZE_STRING
         );
-
-        // Pegar dados do formulário
-        // Montar modelo Curso
-        // Inserir no banco
+    
         $curso = new Curso();
         $curso->setDescricao($descricao);
-        $this->entityManager->persist($curso);
+    
+        $id = filter_input(
+            INPUT_GET,
+            'id',
+            FILTER_VALIDATE_INT
+        );
+    
+        if (!is_null($id) && $id !== false) {
+            $curso->setId($id);
+            $this->entityManager->merge($curso);
+        } else {
+            $this->entityManager->persist($curso);
+        }
+    
         $this->entityManager->flush();
-
-        // Mensagem(alert) a ser enviada para usuário pelo lado do cliente (front-end)
-        // echo "Curso $descricao salvo com sucesso!";
+    
         header('Location: /listar-cursos', true, 302);
     }
 }
