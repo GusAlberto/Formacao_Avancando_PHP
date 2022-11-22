@@ -1,5 +1,3 @@
-<?php include __DIR__ . '/inicio-html.php'; ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,7 +8,5 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <h1>Listar cursos</h1>
+        <h1><?= $titulo; ?></h1>
     </div>
-
-<?php include __DIR__ . '/fim-html.php'; ?>
