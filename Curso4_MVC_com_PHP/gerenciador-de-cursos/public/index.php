@@ -7,8 +7,8 @@ use Nyholm\Psr7Server\ServerRequestCreator;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
+$caminho = $_SERVER['PHP_SELF'];
 
-$caminho = $_SERVER['PATH_INFO'];
 $rotas = require __DIR__ . '/../config/routes.php';
 
 if (!array_key_exists($caminho, $rotas)) {
@@ -33,7 +33,7 @@ $creator = new ServerRequestCreator(
     $psr17Factory // StreamFactory
 );
 
-$serverRequest = $creator->fromGlobals();
+$serverRequest = $creator->fromGlobals();                   
 
 $classeControladora = $rotas[$caminho];
 

@@ -7,6 +7,7 @@ $builder->addDefinitions([
             ->getEntityManager();
     }
 ]);
+
 $container = $builder->build();
 
 return $container; 
