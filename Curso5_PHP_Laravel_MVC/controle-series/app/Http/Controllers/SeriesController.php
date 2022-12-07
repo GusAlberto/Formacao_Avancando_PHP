@@ -27,6 +27,16 @@ class SeriesController extends Controller
         $serie->nome = $nomeSerie;
         $serie->save();
 
-        return redirect('/series');
+        return redirect('/');
+    }
+
+    public function delete(Request $request)
+    {
+        $nomeSerie = $request->input('nome');
+        $serie = new Serie();
+        $serie->nome = $nomeSerie;
+        $serie->save();
+
+        return redirect('/');
     }
 }
