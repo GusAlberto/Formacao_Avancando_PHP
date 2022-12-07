@@ -11,6 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
+ /*
+ Utilizamos o Laravel Mix para instalar e configurar o bootstrap;
+ Webpack é uma ferramenta que permite que tenhamos um pipeline;
+ Uma linha de execução que queiramos fazer no nosso front-end;
+ Vai transpilar(Compilar e traduzir) um Typescript para JavaScript;
+ Vai transpilar um SCSS para CSS;
+
+ */
+
 mix
-    .sass('resources/css/app.scss', 'public/css')
-    .js('resources/js/app.js', 'public/js');
+    .sass('resources/css/app.scss', 'public/css');

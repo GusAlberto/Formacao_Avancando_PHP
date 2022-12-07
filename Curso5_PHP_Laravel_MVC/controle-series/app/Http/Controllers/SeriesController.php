@@ -9,9 +9,10 @@ class SeriesController extends Controller
     public function index(Request $request)
     {
         $series = [
-            'Punisher',
-            'Lost',
+            'Breaking Bad',
+            'PRISON BREAK',
             'Grey\'s Anatomy',
+            'Doctor House',
         ];
 
         return view('series.index')->with('series', $series);
