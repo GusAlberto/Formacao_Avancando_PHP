@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SeriesController;
+use App\Models\Serie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/series');
+});
+
+Route::resource('/series', SeriesController::class);
+
+/*
+Route::controller(SeriesController::class)->group(function () {
+
+    Route::get('/series', 'index')->name('series.create');
+
+    Route::get('/series/criar', 'create')->name('series.create');
+
+    Route::post('/series/salvar', 'store')->name('series.store');
 });
  */
-Route::get('/', [SeriesController::class, 'index']);
-
-Route::get('/series/criar', [SeriesController::class, 'create']);
-
-Route::post('/series/salvar', [SeriesController::class, 'store']);
-
