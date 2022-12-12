@@ -20,12 +20,19 @@ Route::get('/', function () {
 });
 
 Route::resource('/series', SeriesController::class)
-    ->only([
+    ->except(['show']);
+
+/*
+Route::resource('/series', SeriesController::class)
+    ->except([
         'index',
         'create',
         'store',
-        'destroy'
+        'destroy',
+        'edit',
+        'update'
     ]);
+ */
 
 /*
 Route::controller(SeriesController::class)->group(function () {
