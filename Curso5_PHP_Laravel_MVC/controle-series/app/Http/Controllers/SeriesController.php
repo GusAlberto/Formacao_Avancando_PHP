@@ -34,6 +34,8 @@ class SeriesController extends Controller
 
     public function destroy(Serie $series)
     {
+        // Modal para confirmação de exclusão
+        
         $series->delete();
 
         return to_route('series.index')
