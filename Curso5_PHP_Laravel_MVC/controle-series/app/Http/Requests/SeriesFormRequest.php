@@ -24,11 +24,36 @@ class SeriesFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => ['required', 'min:2']
+            'nome' => ['required', 'unique:series', 'min:2', 'max:128'],
         ];
+        /*
+           'password' => [
+                'required',
+                'min:6',
+                'letters',
+                'mixedCase',
+                'numbers',
+                'symbols',
+                'uncompromised',
+                ]
+         */
     }
 
+
+   /* QUERY PARA VERIFICAR OS DADOS DO USUÁRIO NO BANCO
+     'nome' => [
+        'required',
+        Rule::unique('aprovadores')->where(function ($query)
+        use ($cadastro_idcadastro, $users_id)
+        {
+              return $query
+                ->where('cadastro_idcadastro', $cadastro_idcadastro)
+                ->where('users_id', $users_id);
+        }),
+    ] */
+
     // VALIDAÇÕES FEITAS À MÃO, PARA NÃO ALTERAR NOSSO ARQUIVO LANG
+
     /*  public function messages()
     {
         return [

@@ -1,8 +1,5 @@
-<x-layout title="{{ __('messages.app_name') }}">
-
-    <a href="{{ route('series.create') }}" class="btn btn-dark mt-2 mb-3">
-        Adicionar
-    </a>
+<x-layout title="Séries">
+    <a href="{{ route('series.create') }}" class="btn btn-dark mb-2">Adicionar</a>
 
     @isset($mensagemSucesso)
     <div class="alert alert-success">
@@ -20,11 +17,9 @@
                 <a href="{{ route('series.edit', $serie->id) }}" class="btn btn-primary btn-sm">
                     Atualizar
                 </a>
-                @content('views.modal')
-                @endcontent
-                
-                {{-- FORMULÁRIO PARA EXCLUSÃO --}}
-                <form action="{{ route('series.destroy', $serie->id) }}" method="post" class="ms-2">
+
+{{-- FORMULÁRIO PARA EXCLUSÃO --}}
+              <form action="{{ route('series.destroy', $serie->id) }}" method="post" class="ms-2">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm">
@@ -32,7 +27,6 @@
                     </button>
                 </form>
             </span>
-
         </li>
         @endforeach
     </ul>

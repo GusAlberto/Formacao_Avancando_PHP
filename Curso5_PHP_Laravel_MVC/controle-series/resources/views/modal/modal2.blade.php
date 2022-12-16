@@ -7,7 +7,7 @@
         @csrf
         @method('DELETE')
         <h5 class="text-center">
-            Você tem certeza que quer deletar{{ $series->nome }}?
+            Você tem certeza que quer deletar{{ $serie->name }}?
         </h5>
     </div>
 
