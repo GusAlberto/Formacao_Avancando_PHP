@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EpisodesController;
 use App\Http\Controllers\SeasonsController;
 use App\Http\Controllers\SeriesController;
 use App\Models\Series;
@@ -22,8 +23,14 @@ Route::get('/', function () {
 
 Route::resource('/series', SeriesController::class);
 
-Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])->name('seasons.index');
+Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])
+    ->name('seasons.index');
 
+Route::get('/seasons/{season}/episodes', [EpisodesController::class, 'index'])
+    ->name('episodes.index');
+
+Route::post('/seasons/{season}/episodes', [EpisodesController::class, 'index'])
+    ->name('episodes.update');
 
 /*
 Route::resource('/series', SeriesController::class)
