@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SeriesFormRequest;
+use App\Models\Episode;
+use App\Models\Season;
 use App\Models\Series;
 use App\Repositories\SeriesRepository;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class SeriesController extends Controller
@@ -17,12 +21,13 @@ class SeriesController extends Controller
 
     public function index(Request $request)
     {
-        $series = Series::all();
-        $mensagemSucesso = session('mensagem.sucesso');
+            $series = Series::all();
+            $mensagemSucesso = session('mensagem.sucesso');
 
-        return view('series.index')->with('series', $series)
-            ->with('mensagemSucesso', $mensagemSucesso);
-    }
+            return view('series.index')->with('series', $series)
+                ->with('mensagemSucesso', $mensagemSucesso);
+        }
+
 
     public function create()
     {
@@ -51,13 +56,20 @@ class SeriesController extends Controller
             ->with('serie', $series);
     }
 
-    public function update(Series $series, SeriesFormRequest $request)
+    public function update(Series $series, Season $seasonsQty, Episode $episodesPerSeason, SeriesFormRequest $request)
     {
         $series->fill($request->all());
         $series->save();
+/*
+        $seasonsQty->fill($request->all());
+        dd($seasonsQty);
+        $seasonsQty->save();
 
+        $episodesPerSeason->fill($request->all());
+        $episodesPerSeason->save();
+ */
         return to_route('series.index')
-            ->with('mensagem.sucesso', "Série '{$series->nome}' atualizada com sucesso!");
+            ->with('mensagem.sucesso', "Dados da '{$series->nome}' atualizada com sucesso!");
     }
 
     public function show()

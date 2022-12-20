@@ -24,8 +24,11 @@ class SeriesFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => ['required', 'unique:series', 'min:2', 'max:128'],
+            'nome' => ['required', 'unique:series', 'min:2', 'max:64'],
+            'seasonsQty' => ['required', 'min:1', 'max:64'],
+            'episodesPerSeason' => ['required', 'min:1', 'max:64'],
         ];
+
         /*
            'password' => [
                 'required',
@@ -39,6 +42,21 @@ class SeriesFormRequest extends FormRequest
          */
     }
 
+    // MENSAGENS FEITAS À MÃO PARA NÃO ALTERAR NOSSO ARQUIVO LANG
+      public function messages()
+    {
+        return [
+            'nome.required' => 'O campo :attribute é obrigatório.',
+            'nome.min' => 'O campo :attribute é necessário ter ao menos :min caracteres.',
+            'nome.max' => 'O campo :attribute pode ter somente :max caracteres.',
+
+            'seasonsQty.required' => 'O campo temporadas é obrigatório',
+            'seasonsQty.min' => 'O campo temporadas é necessário ter ao menos :min temporada.',
+
+            'episodesPerSeason.required' => 'O campo episódios é obrigatório.',
+            'episodesPerSeason.min' => 'O campo episódios é necessário ter ao menos :min episódio.',
+        ];
+    }
 
    /* QUERY PARA VERIFICAR OS DADOS DO USUÁRIO NO BANCO
      'nome' => [
@@ -50,15 +68,7 @@ class SeriesFormRequest extends FormRequest
                 ->where('cadastro_idcadastro', $cadastro_idcadastro)
                 ->where('users_id', $users_id);
         }),
-    ] */
+    ]
+    */
 
-    // VALIDAÇÕES FEITAS À MÃO, PARA NÃO ALTERAR NOSSO ARQUIVO LANG
-
-    /*  public function messages()
-    {
-        return [
-            'nome.required' => 'O campo nome é obrigatório',
-            'nome.min' => 'O campo nome é necessário ter ao menos :min caracteres',
-        ];
-    } */
 }

@@ -17,7 +17,11 @@
                     Nº Temporadas:
                 </label>
 
-                <input type="text" id="seasonsQty" name="seasonsQty" class="form-control" value="{{ old('seasonsQty') }}">
+                <input  type="text"
+                        id="seasonsQty"
+                        name="seasonsQty"
+                        class="form-control"
+                        value="{{ old('seasonsQty') }}">
             </div>
 
             <div class="col-2">
@@ -25,7 +29,11 @@
                     Eps / Temporada:
                 </label>
 
-                <input type="text" id="episodesPerSeason" name="episodesPerSeason" class="form-control" value="{{ old('episodesPerSeason') }}">
+                <input type="text"
+                        id="episodesPerSeason"
+                        name="episodesPerSeason"
+                        class="form-control"
+                        value="{{ old('episodesPerSeason') }}">
             </div>
 
         </div>
@@ -35,5 +43,4 @@
         </button>
 
     </form>
-
 </x-layout>
