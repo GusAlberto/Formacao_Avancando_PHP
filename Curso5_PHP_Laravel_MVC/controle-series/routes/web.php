@@ -4,6 +4,7 @@ use App\Http\Controllers\EpisodesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SeasonsController;
 use App\Http\Controllers\SeriesController;
+use App\Http\Controllers\UsersController;
 use App\Http\Middleware\Autenticador;
 use Illuminate\Support\Facades\Route;
 
@@ -18,26 +19,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ROTA INICIAL DA NOSSA APLICAÇÃO QUE REDIRECIONA PARA LOGIN
 Route::get('/', function () {
     return redirect('/series');
 })->middleware(Autenticador::class);
 
+// ROTA PARA EXIBIR AS SÉRIES
 Route::resource('/series', SeriesController::class);
 
+// ROTA PARA CRIAR SÉRIES NA APLICAÇÃO
 Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])
     ->name('seasons.index');
 
+// ROTA PARA EXIBIR EPISÓDIOS DAS SÉRIES
 Route::get('/seasons/{season}/episodes', [EpisodesController::class, 'index'])
     ->name('episodes.index');
 
+// ROTA PARA MARCAR EPISÓDIOS COMO ASSISTIDOS
 Route::post('/seasons/{season}/episodes', [EpisodesController::class, 'index'])
     ->name('episodes.update');
 
-//ROTAS PARA LOGAR NA APLICAÇÃO
+// ROTAS PARA LOGAR NA APLICAÇÃO
 Route::get('/login', [LoginController::class, 'index'])
-    ->name('login.index');
+    ->name('login');
 Route::post('/login', [LoginController::class, 'store'])
-    ->name('signin.index');
+    ->name('signin');
+
+// ROTA PARA DESLOGAR NA APLICAÇÃO
+Route::get('/logout', [LoginController::class, 'logout'])
+->name('logout');
+
+// ROTAS PARA REGISTRAR NA APLICAÇÃO
+Route::get('/register', [UsersController::class, 'create'])
+    ->name('users.create');
+Route::post('/register', [UsersController::class, 'store'])
+    ->name('users.create');
 
 /*
 Route::resource('/series', SeriesController::class)

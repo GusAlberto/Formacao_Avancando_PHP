@@ -12,11 +12,19 @@ class LoginController
         return view('login.index');
     }
 
-    function store(Request $request)
+    public function store(Request $request)
     {
-        if(!Auth::attempt($request->all())) {
+        if(!Auth::attempt($request->only(['email', 'password']))) {
             return redirect()->back()->withErrors((['Usuário ou senha iválidos']));
         }
 
+        return to_route('series.index');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return to_route('login');
     }
 }
